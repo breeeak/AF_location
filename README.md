@@ -1,4 +1,4 @@
-# A ResNet-based model for AF location detection in ECG signals  for the 4th China Physiological Signal Challenge 2021
+# A ResNet-based model for AF location detection in ECG signals 
 
 This repository is created for the [4th China Physiological Signal Challenge 2021](http://www.icbeb.org/CPSC2021).
 
@@ -17,7 +17,7 @@ Dependencies are shown in the [requirements.txt](requirements.txt).
     - ...
 
 ## Model
-We upload our pretrained model link on the [OneDrive](https://portland-my.sharepoint.com/:f:/g/personal/shuomeng2-c_my_cityu_edu_hk/EnIXg_BmwNNIkCspArNzG48BxhBq3NUJCprLFBBuar224A?e=pcW0dZ) (only trained 11 epoch) 
+We upload our pretrained model link on the [OneDrive](https://portland-my.sharepoint.com/:u:/g/personal/shuomeng2-c_my_cityu_edu_hk/EWLV-8ljcohJh6UT8_s_S8UBkEQsw4_1Bfcm1VbDxklWxw?e=2JyVbd) (only trained 3 epoch 😂) 
 
 ## Getting Started!
 Training:
@@ -31,11 +31,12 @@ Training:
 Generate Json File for the Entry of CSPC2001
 
 1. Install all requirements in requirements.txt
-2. `python entry_2021.py <test_path> <test_result_path>`
+2. Download model and put it in the checkpoint directory and change the relevant parameters
+3. `python entry_2021.py <test_path> <test_result_path>`
 
 Get results 
 
-1. `python score_2021.py <ans_path> <result_save_path>`
+1. `python score_2021.py <test_result_path> <result_save_path>`
 
 
 

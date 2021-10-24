@@ -22,7 +22,7 @@ from scipy import signal
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-from utils import Logger, AverageMeter, accuracy, mkdir_p, savefig
+from myutils import Logger, AverageMeter, accuracy, mkdir_p, savefig
 
 
 def generate_stft_fig(data, fs=100, features=2, image_size=224, win_sz=100, overlap=50):
@@ -273,10 +273,10 @@ class Args():
 
 args = Args()
 lr = args.lr
-# 是否使用GPU运算
+
 use_cuda = torch.cuda.is_available()
 best_acc = 0  # best test accuracy
-# 随机种子
+
 if args.manualSeed is None:
     args.manualSeed = random.randint(1, 10000)
 random.seed(args.manualSeed)
@@ -364,7 +364,7 @@ def main():
             'best_acc': best_acc,
             'optimizer': optimizer.state_dict(),
         }, is_best, checkpoint=args.checkpoint)
-        # 保存和加载整个模型
+
         # torch.save(model_object, 'model.pkl')
         # model = torch.load('model.pkl')
 

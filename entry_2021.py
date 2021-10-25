@@ -48,7 +48,7 @@ def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth
             sig_len = len(sig)
             print("**********", record_name, sig_len)
 
-            qrs_inds = processing.xqrs_detect(sig=sig[:, 0], fs=fields['fs'], verbose=False)
+            qrs_inds = processing.xqrs_detect(sig=sig[:, 1], fs=fields['fs'], verbose=False)
             # if sig_len < max_length:
             #     qrs_inds = processing.xqrs_detect(sig=sig[:, 0], fs=fields['fs'], verbose=False)
             # else:
@@ -76,7 +76,7 @@ def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth
                     start_index = end_index - slide
                 data = []
                 for j in range(features):
-                    data.extend( sig[start_index:end_index,j])
+                    data.extend(sig[start_index:end_index,j][:,1])
                 data = np.expand_dims(data, axis=0)
                 data_list.append(data)
 

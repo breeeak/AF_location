@@ -21,7 +21,6 @@ def data_filtering(data_dir):
 def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth.tar"):
     min_interval = 5
     mid_peak_inter = 2  # 中间
-    features = 2
     test_batch_size = 64
 
 
@@ -43,12 +42,12 @@ def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth
         try:
             record_path = os.path.join(test_path, record_name)
             sig, fields = wfdb.rdsamp(record_path)
-            for i in range(sig.shape[1]):
-                sig[:, i] = st.zscore(sig[:, i])
+            sig = sig[:,1]
+            sig= st.zscore(sig)
             sig_len = len(sig)
             print("**********", record_name, sig_len)
 
-            qrs_inds = processing.xqrs_detect(sig=sig[:, 1], fs=fields['fs'], verbose=False)
+            qrs_inds = processing.xqrs_detect(sig=sig, fs=fields['fs'], verbose=False)
             # if sig_len < max_length:
             #     qrs_inds = processing.xqrs_detect(sig=sig[:, 0], fs=fields['fs'], verbose=False)
             # else:
@@ -75,8 +74,7 @@ def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth
                     end_index = sig_len
                     start_index = end_index - slide
                 data = []
-                for j in range(features):
-                    data.extend(sig[start_index:end_index,j][:,1])
+                data.extend(sig[start_index:end_index])
                 data = np.expand_dims(data, axis=0)
                 data_list.append(data)
 
@@ -140,15 +138,15 @@ def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth
 
 
 if __name__ == '__main__':
-    TESTSET_PATH = sys.argv[1]
-    RESULT_PATH = sys.argv[2]
-    MODEL_PATH = sys.argv[3]
-    get_json(TESTSET_PATH,RESULT_PATH,MODEL_PATH)
+    # TESTSET_PATH = sys.argv[1]
+    # RESULT_PATH = sys.argv[2]
+    # MODEL_PATH = sys.argv[3]
+    # get_json(TESTSET_PATH,RESULT_PATH,MODEL_PATH)
 
-    # test_path = "E:\\1_dataset\\CPSC\\test"
-    # results_path = "E:\\1_dataset\\CPSC\\test_results_seg"
-    # model_path = ".\\checkpoint\\model_best.pth.tar"
-    # get_json(test_path,results_path,model_path)
+    test_path = "E:\\1_dataset\\CPSC\\test"
+    results_path = "E:\\1_dataset\\CPSC\\test_results_seg3"
+    model_path = ".\\checkpoint\\model_best.pth.tar"
+    get_json(test_path,results_path,model_path)
 
 
 

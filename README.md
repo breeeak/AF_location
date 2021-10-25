@@ -17,7 +17,7 @@ Dependencies are shown in the [requirements.txt](requirements.txt).
     - ...
 
 ## Model
-We upload our pretrained model link on the [OneDrive](https://portland-my.sharepoint.com/:u:/g/personal/shuomeng2-c_my_cityu_edu_hk/EWLV-8ljcohJh6UT8_s_S8UBkEQsw4_1Bfcm1VbDxklWxw?e=2JyVbd) (only trained 3 epoch 😂) 
+We upload our pretrained model [af_model_best.pth.tar](https://portland-my.sharepoint.com/:u:/g/personal/shuomeng2-c_my_cityu_edu_hk/EWLV-8ljcohJh6UT8_s_S8UBkEQsw4_1Bfcm1VbDxklWxw?e=2JyVbd) (only trained 3 epoch 😂) 
 
 ## Getting Started!
 Training:
@@ -31,8 +31,11 @@ Training:
 Generate Json File for the Entry of CSPC2001
 
 1. Install all requirements in requirements.txt
-2. Download model and put it in the checkpoint directory and change the relevant parameters
-3. `python entry_2021.py <test_path> <test_result_path>`
+2. Download the trained model[af_model_best.pth.tar](https://portland-my.sharepoint.com/:u:/g/personal/shuomeng2-c_my_cityu_edu_hk/EWLV-8ljcohJh6UT8_s_S8UBkEQsw4_1Bfcm1VbDxklWxw?e=2JyVbd) 
+and put it in the `./checkpoint/af_model_best.pth.tar`checkpoint directory
+3. `python entry_2021.py <test_path> <test_result_path> <trained_model_path>`
+4. for example: 
+    - python entry_2021.py "./test_path" "./test_result_path" "./checkpoint/af_model_best.pth.tar"`
 
 Get results 
 

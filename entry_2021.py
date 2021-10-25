@@ -18,7 +18,7 @@ def data_filtering(data_dir):
                 record_names.append(file[:-4])
     return record_names
 
-def get_json(test_path, results_path, model_path="./checkpoint/model_best.pth.tar"):
+def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth.tar"):
     min_interval = 5
     mid_peak_inter = 2  # 中间
     features = 2
@@ -142,7 +142,8 @@ def get_json(test_path, results_path, model_path="./checkpoint/model_best.pth.ta
 if __name__ == '__main__':
     TESTSET_PATH = sys.argv[1]
     RESULT_PATH = sys.argv[2]
-    get_json(TESTSET_PATH,RESULT_PATH)
+    MODEL_PATH = sys.argv[3]
+    get_json(TESTSET_PATH,RESULT_PATH,MODEL_PATH)
 
     # test_path = "E:\\1_dataset\\CPSC\\test"
     # results_path = "E:\\1_dataset\\CPSC\\test_results_seg"

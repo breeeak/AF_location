@@ -17,7 +17,7 @@ Dependencies are shown in the [requirements.txt](requirements.txt).
     - ...
 
 ## Model
-We upload our pretrained model [af_model_best.pth.tar](https://portland-my.sharepoint.com/:u:/g/personal/shuomeng2-c_my_cityu_edu_hk/EWLV-8ljcohJh6UT8_s_S8UBkEQsw4_1Bfcm1VbDxklWxw?e=2JyVbd) (only trained 3 epoch 😂) 
+We upload our pretrained model [af_model_best.pth.tar](https://portland-my.sharepoint.com/:u:/g/personal/shuomeng2-c_my_cityu_edu_hk/EadHagFinuxBqpDuSzm6Na0BKDyQeSiqAtSNN-2jvnC_2Q?e=uCOqxj) (only trained 3 epoch 😂) 
 
 ## Getting Started!
 Training:

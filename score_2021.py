@@ -165,8 +165,10 @@ def score(data_path, ans_path):
     return score_avg
 
 if __name__ == '__main__':
-    TESTSET_PATH = sys.argv[1]
-    RESULT_PATH = sys.argv[2]
+    # TESTSET_PATH = sys.argv[1]
+    # RESULT_PATH = sys.argv[2]
+    TESTSET_PATH =  "E:\\1_dataset\\CPSC\\test"
+    RESULT_PATH = "E:\\1_dataset\\CPSC\\test_results_seg4"
     score_avg = score(TESTSET_PATH, RESULT_PATH)
     print('AF Endpoints Detection Performance: %0.4f' %score_avg)
 

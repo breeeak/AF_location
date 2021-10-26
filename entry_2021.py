@@ -138,15 +138,15 @@ def get_json(test_path, results_path, model_path="./checkpoint/af_model_best.pth
 
 
 if __name__ == '__main__':
-    # TESTSET_PATH = sys.argv[1]
-    # RESULT_PATH = sys.argv[2]
-    # MODEL_PATH = sys.argv[3]
-    # get_json(TESTSET_PATH,RESULT_PATH,MODEL_PATH)
+    TESTSET_PATH = sys.argv[1]
+    RESULT_PATH = sys.argv[2]
+    MODEL_PATH = sys.argv[3]
+    get_json(TESTSET_PATH,RESULT_PATH,MODEL_PATH)
 
-    test_path = "E:\\1_dataset\\CPSC\\test"
-    results_path = "E:\\1_dataset\\CPSC\\test_results_seg3"
-    model_path = ".\\checkpoint\\model_best.pth.tar"
-    get_json(test_path,results_path,model_path)
+    # test_path = "E:\\1_dataset\\CPSC\\test"
+    # results_path = "E:\\1_dataset\\CPSC\\test_results_seg4"
+    # model_path = ".\\checkpoint\\checkpoint.pth.tar"
+    # get_json(test_path,results_path,model_path)
 
 
 
